@@ -1,0 +1,57 @@
+Дана матрица размерностью N?N, имитирующая поле для игры в «Крестики-нолики», содержащая символы пробела, символы '0' и 'X'. С клавиатуры  вводятся координаты  очередного символа (номер строки и номер столбца), например, нолика. Требуется определить, выстроились ли после ввода в ряд пять ноликов по вертикали, горизонтали или диагонали. Для проверки каждого направления написать отдельные функции и предложить пользователю выбрать направление.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void check_horizontal(char* mass, int N, char* buff, int* check, int lol)
+{
+int schet=0, i, p, pilla=0;	int final=0;	
+
+for (i=0; i<N; i++) 
+check[i]=0;
+
+ofstream ppp;
+ppp.open ("ggg.txt", ios::out);
+		 for (i=0; i<N; i++)
+		 {
+		 if (fmod (i+1, sqrt(N))==0)
+	 	 ppp<<mass[i]<<"\n";
+	     else
+	     ppp<<mass[i]<<" ";
+		 }
+ppp.close ();	
+
+ifstream ggg;
+ggg.open ("ggg.txt", ios::in);
+
+while (final!=lol)
+	  			  		   				 {
+   for (i=0; i<lol; i++)
+   ggg>>buff[i];
+
+   				for (i=0; i<lol; i++)
+   				if (buff[i]=='O') {schet++; check[pilla]=schet;} else {schet=0; pilla++;}
+final++;
+				                         }
+ggg.close ();	
+	 
+for (i=0; i<N; i++)
+if (check[i]==5)   p=777;
+   if (p==777) cout<<"\n\nIaeaaiu 5 eaoueo iia?ya ioeae a ai?eciioaeuiii ?yaa!\n\n";
+   else
+   cout<<"\n\n5 eaoueo iia?ya ioeae a ai?eciioaeuiii ?yaa ia iaia?o?aiu!\n\n";  
+system ("del ggg.txt");
+}
+
