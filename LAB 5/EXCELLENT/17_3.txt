@@ -1,0 +1,140 @@
+#include <iostream>
+#include <clocale>
+#include <fstream>
+
+using namespace std;
+
+const int strsize = 50;
+const char fname[20] = "test.txt";
+
+struct users {
+	char surname[strsize],
+		 login[strsize],
+		 password[strsize],
+		 role[15];
+};
+
+void sort (struct users *list, int N)
+{
+int i1;
+users change;
+for (int i(0); i<N; i++) 
+{  
+	if (strcmp(list[i].role, "пользователь"))
+	{
+			for (int j(i+1); j<N; j++)
+			{
+					if (!strcmp(list[j].role, "пользователь"))
+					{
+					change = list[i];
+					list[i]=list[j];
+					list[j]=change;
+					i1 = i + 1;
+					}
+			}
+
+	}
+}
+
+for (int i(i1); i<N; i++) 
+{  
+	if (strcmp(list[i].role, "модератор"))
+	{
+			for (int j(i+1); j<N; j++)
+			{
+					if (!strcmp(list[j].role, "модератор"))
+					{
+					change = list[i];
+					list[i]=list[j];
+					list[j]=change;
+					}
+			}
+	}
+}
+}
+
+
+
+int size ()
+{
+char line[255];
+int N = 0;
+ifstream fin (fname);
+	if (!fin.is_open())
+		{
+		cout << "Ошибка открытия текстового файла!" << endl;
+		system("Pause");
+		return 0;
+		}
+while (!fin.eof())
+{
+fin.getline(line,255);
+N+=1;
+}
+fin.close();
+return N-1;
+}
+
+int main()
+{ 
+setlocale(LC_ALL, "Russian");
+int N = size();
+char name[15];
+cout << "Кол-во структур данных в файле " << N << endl;
+cout << "\n";
+users *list;
+list = new users [N];
+ifstream in (fname);
+	if (!in.is_open())
+		{
+		cout << "Ошибка открытия текстового файла!" << endl;
+		system("Pause");
+		return 0;
+		}
+
+
+for (int i(0); i<N; i++) //считываем из файла в массив структур (!in.eof)
+{
+	in >> list[i].surname >> list[i].login >> list[i].password >> list[i].role;
+	cout << list[i].surname << " " << list[i].login << " " << list[i].password << " " << list[i].role << endl;
+}
+in.close(); // закрываем поток вывода из файла
+
+cout << "\n \n";
+		cout << "Введите имя для двоичного файла:\n";
+		cin >> name;
+		fstream fin(name, ios::binary|ios::in|ios::out|ios::app); // Для записи
+		if (!fin.is_open())
+			{
+			cout << "Ошибка открытия двоичного файла!" << endl;
+			system("Pause");
+			return 0;
+			}
+
+		sort(list, N);  // отсортировали массив структур
+		for (int i(0); i<N; i++)
+		fin.write((char*)&list[i], sizeof(users)); //Записали структуру целиком
+
+		fin.seekg(0L, ios_base::beg);
+
+for (int i(0); i<N; i++) 
+{	
+	list[i].surname[0] = '\0'; 
+	
+}
+				for (int i(0); i<N; i++)
+				fin.read((char*)&list[i], sizeof(users)); //Считали структуру целиком
+
+				fin.close();
+
+cout << "\n";
+for (int i(0); i<N; i++) //Выводим на экран результат
+{
+	cout << list[i].surname << " " << list[i].login << " " << list[i].password << " " << list[i].role << endl;
+}
+cout << "\n";
+
+delete [] list;
+system("Pause");
+return 0;
+}
