@@ -20,8 +20,6 @@
 
 ##Часть лабораторных работ выполнена на "4", другая часть - на "5"
 
-> * [Перейти к лабораторным ПЕРВОГО семестра](https://github.com/ABBATnull/SFU-IKIT-LABY-PROG-1-SEMESTER)
-
 ##IDE, которыми я пользовался во время написания лабораторных :
 > * Dev C++
 > * Qt Creator
@@ -31,7 +29,8 @@
 > * Пушкарев К.В.
 > * Покидышева Л.И.
 
+[*_Перейти к лабораторным ПЕРВОГО семестра_*](https://github.com/ABBATnull/SFU-IKIT-LABY-PROG-1-SEMESTER)
+
 ##Связь со мной :
 > * [_VK_](https://vk.com/a_b_b_a_t)
-> * [_GMail_] : gmail.com/mrabbat69@gmail.com
 > * [_GitHubIssie_](https://github.com/ABBATnull/SFU-IKIT-LABY-PROG-1-SEMESTER/issues)
