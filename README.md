@@ -32,7 +32,7 @@
 ##Вам это может быть интересно
 > * [**_Перейти к лабораторным по ИНФОРМАТИКЕ_**](https://github.com/ABBATnull/SFU-IKIT-LABY-INFA-2)
 > * [**_Перейти к лабораторным ПЕРВОГО семестра по ПРОГРАММИРОВАНИЮ_**](https://github.com/ABBATnull/SFU-IKIT-LABY-PROG-1)
-> * [**_Больше вариантов лабораторных по ПРОГРАММИРОВАНИЮ у этого парня:_**](https://github.com/Zulcom/Programming-Basis-II)
+> * _Больше вариантов лабораторных по ПРОГРАММИРОВАНИЮ у этого парня_[** -> Zulcom_**](https://github.com/Zulcom/Programming-Basis-II)
 
 ##Связь со мной :
 > * [_VK_](https://vk.com/a_b_b_a_t)
