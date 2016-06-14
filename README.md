@@ -33,4 +33,4 @@
 
 ##Связь со мной :
 > * [_VK_](https://vk.com/a_b_b_a_t)
-> * [_GitHubIssie_](https://github.com/ABBATnull/SFU-IKIT-LABY-PROG-1-SEMESTER/issues)
+> * [_GitHubIssue_](https://github.com/ABBATnull/SFU-IKIT-LABY-PROG-1-SEMESTER/issues)
